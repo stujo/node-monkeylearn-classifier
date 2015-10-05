@@ -2,9 +2,9 @@
   "name": "monkeylearn-classifier",
   "version": "1.0.0",
   "description": "Client for Monkeylearn Classifiers",
-  "main": "./lib/classifier.js",
+  "main": "./index.js",
   "scripts": {
-    "run": "node ./lib/go.js",
+    "run": "./bin/classify",
     "test": "mocha spec --require spec/helpers/chai.js"
   },
   "repository": {

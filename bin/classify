@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+// To run in the debugger...
+//  #!/usr/bin/env node-debug
+
 var MONKEYLEARN_AUTH_TOKEN = process.env.MONKEYLEARN_AUTH_TOKEN;
 
 var Classifier = require('../lib/classifier');
@@ -22,13 +25,16 @@ var classifier = new Classifier(
 
 var strings = process.argv[2];
 
-console.log(strings);
-
 classifier.classify(strings, function(error, response){
   if(error){
      console.error(error);
+  } else {
+    if(response.resolved()){
+      console.log(JSON.stringify(response.results()));
+    } else {
+      console.log(response.error());
+    }
   }
-  console.log(JSON.stringify(response.results()));
 })
 
 
