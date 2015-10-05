@@ -20,7 +20,7 @@ var classifier = new Classifier(
   }
 );
 
-var strings = process.argv[1];
+var strings = process.argv[2];
 
 console.log(strings);
 
