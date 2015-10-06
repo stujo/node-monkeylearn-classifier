@@ -43,7 +43,7 @@ $ export MONKEYLEARN_AUTH_TOKEN=YOUR_AUTH_TOKEN
 $ ./bin/classify "Hello World"
 ```
 
-## Developement
+## Development
 
 * Run tests with ``$ gulp mocha``
 * Run tests on change with ``$ gulp watch-mocha``
