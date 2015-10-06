@@ -25,16 +25,17 @@ var classifier = new Classifier(
 
 var strings = process.argv[2];
 
-classifier.classify(strings, function(error, response){
-  if(error){
-     console.error(error);
-  } else {
-    if(response.resolved()){
-      console.log(JSON.stringify(response.results()));
+classifier.classify(strings, function(error, response) {
+    if(error){
+      console.error("HTTPS ERROR", error);
     } else {
-      console.log(response.error());
+      if(response.resolved()){
+        console.log(JSON.stringify(response.results()));
+      } else {
+        // API Error Message
+        console.log("API ERROR", response.error());
+      }
     }
-  }
-})
+  });
 
 

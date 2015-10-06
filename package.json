@@ -5,7 +5,8 @@
   "main": "./index.js",
   "scripts": {
     "run": "./bin/classify",
-    "test": "mocha spec --require spec/helpers/chai.js"
+    "test": "gulp mocha",
+    "debugtest": "node-debug _mocha spec --require spec/helpers/chai.js"
   },
   "repository": {
     "type": "git",
